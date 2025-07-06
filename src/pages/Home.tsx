@@ -48,7 +48,7 @@ const Home: React.FC = () => {
               />
               <div className="relative w-80 h-80 mx-auto rounded-full overflow-hidden shadow-2xl border-4 border-white/80 dark:border-primary-700/80 backdrop-blur-sm">
                 <img
-                  src="/Omkar.png"
+                  src="public/Omkar.png"
                   alt="Omkara Anjaneya Kumar"
                   className="w-full h-full object-cover"
                 />
