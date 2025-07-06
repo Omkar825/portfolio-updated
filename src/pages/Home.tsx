@@ -165,7 +165,7 @@ const Home: React.FC = () => {
               <motion.a
                 whileHover={{ scale: 1.1, rotate: 5, y: -3 }}
                 whileTap={{ scale: 0.95 }}
-                href="https://twitter.com/yourusername"
+                href="https://x.com/omkar_ratnala"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative p-4 bg-sky-500 hover:bg-sky-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
