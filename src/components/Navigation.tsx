@@ -31,16 +31,14 @@ const Navigation: React.FC = () => {
             className="flex items-center"
           >
             <Link to="/" className="flex items-center">
-              <motion.img
-                src="/logo.jpeg"
-                alt="Logo"
-                className="h-8 md:h-10 w-auto transition-all duration-300 filter dark:brightness-0 dark:invert dark:drop-shadow-[0_0_8px_rgba(147,51,234,0.3)]"
-                whileHover={{ 
-                  scale: 1.1,
-                  filter: "drop-shadow(0 0 12px rgba(147,51,234,0.4))"
-                }}
-                transition={{ duration: 0.2 }}
-              />
+            <motion.div
+  whileHover={{ scale: 1.1, y: -1 }}
+  transition={{ duration: 0.2 }}
+  className="text-lg md:text-xl font-serif font-bold bg-clip-text text-transparent bg-gradient-to-r from-accent-600 to-primary-600 dark:from-accent-400 dark:to-primary-400"
+>
+  Omkara
+</motion.div>
+
             </Link>
           </motion.div>
 
