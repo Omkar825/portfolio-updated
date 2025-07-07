@@ -6,12 +6,26 @@ import { Trophy, Award, FileText, Lightbulb, Target, Star } from 'lucide-react';
 const Achievements: React.FC = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.1,
+    threshold: 0.05,
+    rootMargin: '50px 0px',
   });
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Force show content after a short delay if inView hasn't triggered
+  const [forceShow, setForceShow] = React.useState(false);
+  
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setForceShow(true);
+    }, 500);
+    
+    return () => clearTimeout(timer);
+  }, []);
+
+  const shouldShow = inView || forceShow;
 
   const achievements = [
     {
@@ -105,8 +119,8 @@ const Achievements: React.FC = () => {
     <section className="py-20 bg-gradient-to-br from-primary-50 to-accent-50 dark:from-primary-900 dark:to-primary-800 min-h-screen pt-32 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={shouldShow ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
@@ -121,8 +135,8 @@ const Achievements: React.FC = () => {
 
         {/* Stats Section */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={shouldShow ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16"
         >
@@ -146,7 +160,7 @@ const Achievements: React.FC = () => {
           ref={ref}
           variants={containerVariants}
           initial="hidden"
-          animate={inView ? "visible" : "hidden"}
+          animate={shouldShow ? "visible" : "hidden"}
           className="relative"
         >
           {/* Timeline Line */}
@@ -224,8 +238,8 @@ const Achievements: React.FC = () => {
 
         {/* Call to Action */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={shouldShow ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.8, delay: 0.8 }}
           className="mt-16 text-center"
         >
