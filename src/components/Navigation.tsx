@@ -21,7 +21,7 @@ const Navigation: React.FC = () => {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-primary-900/90 backdrop-blur-md border-b border-primary-200/30 dark:border-primary-700/30 shadow-sm transition-colors duration-300"
+      className="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-primary-900/90 backdrop-blur-md border-b border-primary-200/30 dark:border-primary-700/30 shadow-sm transition-colors duration-30"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
