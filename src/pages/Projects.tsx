@@ -6,12 +6,26 @@ import { ExternalLink, Github, Bot, Leaf, Users, Coffee } from 'lucide-react';
 const Projects: React.FC = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.1,
+    threshold: 0.05,
+    rootMargin: '50px 0px',
   });
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Force show content after a short delay if inView hasn't triggered
+  const [forceShow, setForceShow] = React.useState(false);
+  
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setForceShow(true);
+    }, 500);
+    
+    return () => clearTimeout(timer);
+  }, []);
+
+  const shouldShow = inView || forceShow;
 
   const projects = [
     {
@@ -86,8 +100,8 @@ const Projects: React.FC = () => {
     <section className="py-20 bg-gradient-to-br from-white to-primary-50 dark:from-primary-900 dark:to-primary-800 min-h-screen pt-32 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={shouldShow ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
@@ -103,7 +117,7 @@ const Projects: React.FC = () => {
           ref={ref}
           variants={containerVariants}
           initial="hidden"
-          animate={inView ? "visible" : "hidden"}
+          animate={shouldShow ? "visible" : "hidden"}
           className="space-y-16"
         >
           {projects.map((project, index) => (
@@ -179,7 +193,7 @@ const Projects: React.FC = () => {
                       <motion.li
                         key={featureIndex}
                         initial={{ opacity: 0, x: -20 }}
-                        animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                        animate={shouldShow ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
                         transition={{ delay: featureIndex * 0.1 }}
                         className="flex items-center gap-2 text-primary-600 dark:text-primary-300 break-words"
                       >
