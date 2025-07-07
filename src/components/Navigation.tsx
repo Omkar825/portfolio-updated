@@ -32,10 +32,10 @@ const Navigation: React.FC = () => {
           >
             <Link to="/" className="flex items-center">
             <motion.div
-  whileHover={{ scale: 1.1, y: -1 }}
-  transition={{ duration: 0.2 }}
-  className="text-lg md:text-xl font-serif font-bold bg-clip-text text-transparent bg-gradient-to-r from-accent-600 to-primary-600 dark:from-accent-400 dark:to-primary-400"
->
+              whileHover={{ scale: 1.1, y: -1 }}
+              transition={{ duration: 0.2 }}
+              className="text-lg md:text-xl font-serif font-bold bg-clip-text text-transparent bg-gradient-to-r from-accent-600 to-primary-600 dark:from-accent-400 dark:to-primary-400"
+            >
   Omkara
 </motion.div>
 
