@@ -8,7 +8,7 @@ const Home: React.FC = () => {
   const handleResumeDownload = () => {
     // Create a temporary link element to trigger download
     const link = document.createElement('a');
-    link.href = 'https://github.com/Omkar825/portfolio/raw/main/99220041567_Resume.pdf';
+    link.href = './99220041567_Resume.pdf';
     link.download = 'Omkara_Anjaneya_Kumar_Resume.pdf';
     link.target = '_blank';
     document.body.appendChild(link);
