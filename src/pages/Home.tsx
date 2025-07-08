@@ -11,7 +11,7 @@ const Home: React.FC = () => {
     try {
       // Create a temporary link element to trigger download
       const link = document.createElement('a');
-      link.href = './99220041567_Resume.pdf';
+      link.href = '/99220041567_Resume.pdf';
       link.download = 'Omkara_Anjaneya_Kumar_Resume.pdf';
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
@@ -23,12 +23,12 @@ const Home: React.FC = () => {
       
       // Fallback: Open in new tab if download fails
       setTimeout(() => {
-        window.open('./99220041567_Resume.pdf', '_blank', 'noopener,noreferrer');
+        window.open('/99220041567_Resume.pdf', '_blank', 'noopener,noreferrer');
       }, 100);
     } catch (error) {
       console.error('Download failed:', error);
       // Fallback: Open in new tab
-      window.open('./99220041567_Resume.pdf', '_blank', 'noopener,noreferrer');
+      window.open('/99220041567_Resume.pdf', '_blank', 'noopener,noreferrer');
     }
   };
 
