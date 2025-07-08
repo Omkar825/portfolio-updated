@@ -1,10 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { LinkedinIcon, GithubIcon, ChevronDown, Download, FolderOpen, Twitter } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import DynamicBackground from '../components/DynamicBackground';
 
 const Home: React.FC = () => {
+  const navigate = useNavigate();
+
   const handleResumeDownload = () => {
     try {
       // Create a temporary link element to trigger download
@@ -30,15 +32,8 @@ const Home: React.FC = () => {
     }
   };
 
-  const scrollToProjects = () => {
-    // Smooth scroll to projects section or navigate to projects page
-    const projectsElement = document.getElementById('projects');
-    if (projectsElement) {
-      projectsElement.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      // If projects section doesn't exist on current page, navigate to projects page
-      window.location.href = '/projects';
-    }
+  const handleViewProjects = () => {
+    navigate('/projects');
   };
 
   return (
@@ -131,7 +126,7 @@ const Home: React.FC = () => {
 
               {/* View Projects Button */}
               <motion.button
-                onClick={scrollToProjects}
+                onClick={handleViewProjects}
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 className="group relative inline-flex items-center gap-3 px-8 py-4 bg-white dark:bg-primary-800 text-primary-700 dark:text-primary-200 font-semibold rounded-full shadow-lg border-2 border-primary-200 dark:border-primary-600 hover:bg-primary-50 dark:hover:bg-primary-700 hover:border-primary-300 dark:hover:border-primary-500 transition-all duration-300 overflow-hidden"
