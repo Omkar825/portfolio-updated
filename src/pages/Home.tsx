@@ -6,14 +6,28 @@ import DynamicBackground from '../components/DynamicBackground';
 
 const Home: React.FC = () => {
   const handleResumeDownload = () => {
-    // Create a temporary link element to trigger download
-    const link = document.createElement('a');
-    link.href = './99220041567_Resume.pdf';
-    link.download = 'Omkara_Anjaneya_Kumar_Resume.pdf';
-    link.target = '_blank';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    try {
+      // Create a temporary link element to trigger download
+      const link = document.createElement('a');
+      link.href = '/99220041567_Resume.pdf';
+      link.download = 'Omkara_Anjaneya_Kumar_Resume.pdf';
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      
+      // Append to body, click, and remove
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      // Fallback: Open in new tab if download fails
+      setTimeout(() => {
+        window.open('/99220041567_Resume.pdf', '_blank', 'noopener,noreferrer');
+      }, 100);
+    } catch (error) {
+      console.error('Download failed:', error);
+      // Fallback: Open in new tab
+      window.open('/99220041567_Resume.pdf', '_blank', 'noopener,noreferrer');
+    }
   };
 
   const scrollToProjects = () => {
