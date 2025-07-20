@@ -12,7 +12,11 @@ const Navigation: React.FC = () => {
     { path: '/about', label: 'About' },
     { path: '/education', label: 'Education' },
     { path: '/skills', label: 'Skills' },
+<<<<<<< HEAD
     { path: '/projects', label: 'Academic Projects' },
+=======
+    { path: '/projects', label: 'Projects' },
+>>>>>>> 5e5f7adca5c170a7cff1ea25675501e4faef82a7
     { path: '/achievements', label: 'Achievements' },
     { path: '/contact', label: 'Contact' },
   ];
