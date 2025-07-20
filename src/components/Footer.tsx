@@ -27,11 +27,7 @@ const Footer: React.FC = () => {
     { name: "About", path: "/about" },
     { name: "Education", path: "/education" },
     { name: "Skills", path: "/skills" },
-<<<<<<< HEAD
     { name: "Academic Projects", path: "/projects" },
-=======
-    { name: "Projects", path: "/projects" },
->>>>>>> 5e5f7adca5c170a7cff1ea25675501e4faef82a7
     { name: "Achievements", path: "/achievements" },
     { name: "Contact", path: "/contact" }
   ];
