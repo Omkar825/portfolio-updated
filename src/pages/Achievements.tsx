@@ -98,8 +98,7 @@ const Achievements: React.FC = () => {
 
   const stats = [
     { number: "5+", label: "Major Achievements", icon: <Star size={24} /> },
-    { number: "2", label: "Patents Granted", icon: <Lightbulb size={24} /> },
-    { number: "2", label: "Research Paper", icon: <FileText size={24} /> },
+    { number: "3", label: "Research Paper", icon: <FileText size={24} /> },
     { number: "3", label: "Competition Wins", icon: <Trophy size={24} /> }
   ];
 
