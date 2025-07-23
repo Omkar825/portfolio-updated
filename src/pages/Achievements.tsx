@@ -83,7 +83,17 @@ const Achievements: React.FC = () => {
       type: "Publication",
       color: "primary",
       doi: "10.1109/ICCRTEE64519.2025.11053040"
-    }    
+    },
+    {
+      title: "Research Publication",
+      organization: "ICICI 2025",
+      description: "Published research paper on 'Smart Attendance System using Facial Recognition' in IEEE conference, showcasing an efficient, secure, and real-time attendance solution using OpenCV and face recognition integrated with MongoDB.",
+      icon: <FileText size={32} />,
+      date: "2025",
+      type: "Publication",
+      color: "accent",
+      doi: "10.1109/ICICI65870.2025.11069930"
+    }
   ];
 
   const stats = [
