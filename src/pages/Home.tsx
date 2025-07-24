@@ -11,7 +11,7 @@ const Home: React.FC = () => {
     try {
       // Create a temporary link element to trigger download
       const link = document.createElement('a');
-      link.href = '/Omkara Anjaneya Kumar Ratnala';
+      link.href = '/99220041567_Resume.pdf';
       link.download = 'Omkara_Anjaneya_Kumar_Resume.pdf';
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
