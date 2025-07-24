@@ -23,12 +23,12 @@ const Home: React.FC = () => {
       
       // Fallback: Open in new tab if download fails
       setTimeout(() => {
-        window.open('/Omkara_Anjaneya_Kumar', '_blank', 'noopener,noreferrer');
+        window.open('/99220041567_Resume.pdf', '_blank', 'noopener,noreferrer');
       }, 100);
     } catch (error) {
       console.error('Download failed:', error);
       // Fallback: Open in new tab
-      window.open('/Omkara_Anjaneya_Kumar', '_blank', 'noopener,noreferrer');
+      window.open('/99220041567_Resume.pdfr', '_blank', 'noopener,noreferrer');
     }
   };
 
