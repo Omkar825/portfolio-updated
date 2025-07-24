@@ -23,12 +23,12 @@ const Home: React.FC = () => {
       
       // Fallback: Open in new tab if download fails
       setTimeout(() => {
-        window.open('/Omkara Anjaneya Kumar Ratnala', '_blank', 'noopener,noreferrer');
+        window.open('/Omkara_Anjaneya_Kumar', '_blank', 'noopener,noreferrer');
       }, 100);
     } catch (error) {
       console.error('Download failed:', error);
       // Fallback: Open in new tab
-      window.open('/Omkara Anjaneya Kumar Ratnala', '_blank', 'noopener,noreferrer');
+      window.open('/Omkara_Anjaneya_Kumar', '_blank', 'noopener,noreferrer');
     }
   };
 
