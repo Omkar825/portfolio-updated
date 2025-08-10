@@ -31,7 +31,7 @@ const Achievements: React.FC = () => {
     {
       title: "Finalist - Launchpad '25",
       organization: "BITS Pilani",
-      description: "SSelected as a finalist for the Green Guardian Go project, competing among top innovators.",
+      description: "Selected as a finalist for the Green Guardian Go project, competing among top innovators.",
       icon: <Target size={32} />,
       date: "2025",
       type: "Competition",
